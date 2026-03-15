@@ -23,7 +23,7 @@ Preferences → Plugins → KOReader Collections → Customize:
 | Calibre library path | `/Users/<username>/Calibre Library` |
 | KOReader books path (on device) | `/home/root/calibre` |
 
-`collection.lua` is always written to and read from `$CALIBRE_HOME/collection.lua`.
+`collection.lua` is always written to and read from `$CALIBRE_HOME/collection.lua`. It will then need to be copied to `$KOREADER_HOME/settings/collection.lua` on your device.
 
 ---
 
@@ -39,14 +39,3 @@ Click the **KOReader Collections** toolbar button. The plugin:
 6. Preserves the `instapaper` block verbatim from the existing `$CALIBRE_HOME/collection.lua`.
 7. Writes the result back to `$CALIBRE_HOME/collection.lua`, creating the file if it does not exist.
 
----
-
-## Plugin files
-
-| File | Role |
-|---|---|
-| `__init__.py` | Plugin metadata, wires to `ui.py` via `actual_plugin` |
-| `ui.py` | `InterfaceAction` — adds the **KOReader Collections** toolbar button |
-| `core.py` | All pure-Python logic: SQLite queries, entry building, Lua rendering/parsing |
-| `config.py` | Preferences widget (Calibre path + device path) |
-| `plugin-import-name-koreader_collections.txt` | Required multi-file plugin marker (empty file) |
