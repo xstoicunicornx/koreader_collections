@@ -23,6 +23,11 @@ class KOReaderCollectionsAction(InterfaceAction):
     )
 
     def genesis(self):
+        icon = get_icons('images/icon.png', 'KOReader Collections')
+
+        # The qaction is automatically created from the action_spec defined
+        # above
+        self.qaction.setIcon(icon)
         self.qaction.triggered.connect(self.export_collections)
 
     # ── Main export handler ───────────────────────────────────────────────────
